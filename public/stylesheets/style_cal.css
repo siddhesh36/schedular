@@ -1,0 +1,35 @@
+div.headline1{
+ margin: 0 auto;
+ position: relative;
+ width: 1100px;
+ height: 100px;
+ text-align: center;
+}
+
+.container{
+ margin: 0 auto;
+ position: relative;
+ padding: 5px;
+ width: 90%;
+ text-align: center;
+}
+
+#calendar-month-year{
+ display: inline-block;
+ position: relative;
+ margin: 50px;
+}
+
+table { table-layout: fixed; }
+
+td{
+ width: 3%;
+ border:1px solid #165db9;
+}
+td:first-child{
+    width: 350px;
+}
+
+#prev1s, #next1s{
+    width:100px;
+}

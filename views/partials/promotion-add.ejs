@@ -1,0 +1,40 @@
+    <div class="container">
+      <hr>
+      <h1>Create New Promotion Record</h1>
+      <hr>
+      <form action="/add" method="POST">  
+        <div class="form-group row">
+          <label for="ticket" class="col-sm-2 col-form-label">Ticket No</label>
+          <input class="form-control col-sm-10" name="ticket" value="<%= data.ticket%>" required>
+       </div>
+       <div class="form-group row">
+          <label for="Title" class="col-sm-2 col-form-label">Title</label>
+          <input class="form-control col-sm-10" name="title" value="<%= data.title%>" required>
+       </div>
+
+        <div class="form-group row">
+            <label for="Title" class="col-sm-2 col-form-label">Country</label>
+            <select name="country" id="country" class="form-control col-sm-10" required>
+              <option disabled selected>Choose your Country</option>
+              <option value="all" <% if(data.country=="all"){ %> selected <% } %>>All</option>
+              <option value="ch" <% if(data.country=="ch"){ %> selected <% } %>>Switzerland</option>
+              <option value="global" <% if(data.country=="global"){ %> selected <% } %>>Global</option>
+              <option value="uk" <% if(data.country=="uk"){ %> selected <% } %>>UK</option>
+              <option value="de" <% if(data.country=="de"){ %> selected <% } %>>Germany</option>
+              <option value="fr" <% if(data.country=="fr"){ %> selected <% } %>>France</option>
+              <option value="it" <% if(data.country=="it"){ %> selected <% } %>>Italy</option>
+              <option value="es" <% if(data.country=="es"){ %> selected <% } %>>Spain</option>
+            </select>
+        </div>
+        
+        <div class="form-group row">
+          <label for="startdate" class="col-sm-2 col-form-label">start date</label>
+          <input type="date" class="form-control col-sm-4" name="startdate" value="<%= data.startdate %>" required>
+          <label for="enddate" class="col-sm-2 col-form-label">end date</label>
+          <input type="date" class="form-control col-sm-4" name="enddate" value="<%= data.enddate %>" required>
+      </div>
+      <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="/index-promotion" class="btn btn-info">Back</a>
+      </form>
+  </div>

@@ -1,0 +1,9 @@
+<% success_msg.forEach(function(success_msg){ %>
+    <div class="alert alert-success"><%= success_msg %></div>
+<% }); %>
+<% error_msgs.forEach(function(error_msgs){ %>
+    <div class="alert alert-danger"><%= error_msgs %></div>
+<% }); %>
+<% errors.forEach(function(error){ %>
+    <div class="alert alert-danger"><%= error %></div>
+<% }); %>

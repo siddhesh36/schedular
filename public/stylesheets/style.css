@@ -1,0 +1,222 @@
+@font-face {
+  font-family: myFont;
+  src: url(./Frutiger_45_Light.ttf);
+}
+
+body {
+  padding: 50px;
+  font: 14px myFont "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul {
+  width: 100%;
+}
+
+li{
+  height: 70px;
+}
+
+li > a {
+  float: right;
+  margin-left: 25px;
+}
+
+li > form {
+  float: right;
+  margin-left: 25px;
+}
+
+ /*index.html*/
+
+body{
+ background: rgb(242,230,225);
+ background-size: cover;
+ color: #000;
+}
+
+  .big {
+    font-weight: 600;
+  }
+  
+  .sz20{
+    font-size: 20px;
+  }
+  
+  .maindiv{
+      width: 56%;
+      height: 400px;
+      vertical-align: middle;
+      float: none;
+      margin: 0 auto;
+      margin-top: 11%;
+      padding: 38px;
+      padding-bottom: 49px;
+      border: 1px solid #000;
+      box-shadow: 10px 10px 5px grey;
+      border-radius: 10px;
+  }
+  
+   .dropbtn {
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .middle{
+    text-align: center;
+  }
+  .add{
+    display: inline-block;
+    position: relative;
+    left:45%;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2e6e1;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid;
+    min-width: 190px;
+  }
+    
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropbtn:hover {
+    background-color: #4a5d19;
+    color:#fff;
+  }
+  
+
+  .dropdown-content a:hover {
+    background-color: #4a5d19;
+    color:#fff;
+  }
+
+  /*promotion.html*/
+  
+  .subdiv{
+    min-width: 1376px;
+    width: 95%;
+    vertical-align: middle;
+    float: none;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 20px;
+    border-radius: 25px;
+  }
+  
+  div.headline1{
+   margin: 0 auto;
+   position: relative;
+   width: 1100px;
+   height: 100px;
+   text-align: center;
+  }
+  
+  .container{
+   margin: 0 auto;
+   position: relative;
+   padding: 5px;
+   text-align: center;
+  }
+  
+  #calendar-month-year{
+   display: inline-block;
+   position: relative;
+   margin: 50px;
+  }
+  
+  table { table-layout: fixed; }
+  
+  td{
+   border:1px solid #165db9;
+   min-width: 35px;
+   max-width: 50px;
+  }
+
+  td:first-child{
+      padding: 1%;
+      min-width: 120px!important;
+      max-width: 350px!important;
+  }
+  
+  #prev1s, #next1s{
+      width:100px;
+  }
+
+  .frm select, .frm  input{
+    height: 40px;
+    border-radius: 10px;
+    padding: 4px;
+  }
+  .frm {
+    text-align: center;
+  }
+  .frm .bttn {
+    padding:0 10px;
+  }
+  
+  .frm .wtd{
+    width: 15%;
+  }
+  
+  /*teaser.html*/
+  
+  .p2{
+    background-color: #4CAF50;
+  }
+  
+  .p3{
+    background-color: #008CBA;
+  }
+  
+  .p4{
+    background-color: #F44336;
+  }
+
+  #calendar-country > table > tr:first-child{
+    position: relative;
+    visibility: hidden;
+  }
+
+  #calendar-country > table > tr > td > div {
+    display: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* table tbody tr td{
+    position:relative;
+  }
+  
+  table tbody tr td div{
+    position:absolute;
+    top:-5em;
+    left:0;
+  } */
+
+
+  

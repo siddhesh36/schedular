@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FORM</title>
+    <link rel='stylesheet' href='/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include partials/_msg.ejs %>
+    <div class="subdiv">
+    <% include partials/promotions-show.ejs %>
+    <a href="/promotions" class="btn btn-primary add">Add Promotions</a>
+    <% include partials/calender.ejs %>
+    </div>
+  <script src='/javascripts/jquery-3.5.1.slim.min.js' ></script>
+  <script src='/js/bootstrap.min.js' ></script>
+  <script src='/javascripts/cal.js' ></script>
+  <% include partials/cal-layer.ejs %>
+</body>
+</html>

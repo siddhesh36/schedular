@@ -1,0 +1,95 @@
+	<div id="res">
+
+	<% if(data.length > 0) { %>
+		<% for(i=0; i < data.length; i++){ %>
+		  <% var sd= data[i].startdate %>
+		  <% var std= new Date(data[i].startdate) %>
+		  <% var end= new Date(data[i].enddate) %>
+		  <% var d = new Date() %>
+		  <% var smon = std.getMonth() %>
+		  <% var emon = end.getMonth() %>
+		  <% var monthdiff = end.getMonth() - std.getMonth() %>
+		  <% var startDate1 = Date.parse(std.toDateString()) %>
+		  <% if(monthdiff == 0) { %>
+			<% var diff = (end.getDate() - std.getDate() + 1 ) * 35 %>
+			<div class="rounded-lg shadow-sm bg-info" id="<%= data[i].id%>" data-country="<%= data[i].country %>" data-std="<%- data[i].startdate %>" 
+				style="width: <%- diff %>px !important" data-smon="<%= smon %>" data-emon="<%= emon %>" data-differmon="<%= monthdiff %>" >
+					<%= data[i].ticket %> - <%= data[i].title %>
+			</div>
+		  <% } else { %>
+			<% var lastday = new Date(d.getFullYear(), d.getMonth() + 1, 0) %>
+			<% var firstday = new Date(d.getFullYear(), d.getMonth(),  1) %>
+			<% var newdiff = (lastday.getDate() - std.getDate() + 1 ) * 35 %>
+			<% var diffnm = (end.getDate() - firstday.getDate() + 1 ) * 35 %>
+			<% var monthpars = ("0" + (end.getMonth() + 1)).slice(-2) %>
+			<% var firstdayparsed = firstday.getFullYear() + "-" + monthpars +"-"+ firstday.getDate() %>
+			<div class="rounded-lg shadow-sm bg-info" id="<%= data[i].id%>" data-country="<%= data[i].country %>" data-std="<%- data[i].startdate %>" 
+				style="width: <%- newdiff %>px !important" data-smon="<%= smon %>" data-emon="<%= smon %>" data-differmon="<%= monthdiff %>" >
+				<%= data[i].ticket %> - <%= data[i].title %>
+			</div>
+			<div class="rounded-lg shadow-sm bg-info" id="<%= data[i].id%>" data-country="<%= data[i].country %>" data-std="<%- firstdayparsed %>" 
+				style="width: <%- diffnm %>px !important" data-smon="<%= smon %>" data-emon="<%= emon %>" data-differmon="<%= monthdiff %>" >
+				<%= data[i].ticket %> - <%= data[i].title %>
+			</div>
+		  <% }; %>
+		<% }; %>
+	<% }; %>
+</div>
+	<script>
+			$("#res").children().each(function(){
+				var getstartdate = $(this).data('std');
+				var getcountry = $(this).data('country');
+				var emon = $(this).data('emon');
+				var startval = ($("."+getstartdate).text()-1) * 35;
+				$("."+getcountry).append($(this));
+				$(this).css('margin-left', startval);
+				if(emon == month){
+					$(this).css('display', 'block');					
+				}
+			});
+			$("#next1s").on("click", function(){
+				if(month<11){
+					month = month +1;
+				}
+				else{
+					month = 0;
+					year = year +1;
+				}
+				commonEx();
+				$("#calendar-country").find('div').each(function(){
+					var emon = $(this).data('emon');
+					var getstartdate = $(this).data('std');
+					var startval = ($("."+getstartdate).text()-1) * 35;
+					if(emon == month){			
+						$(this).css({'display':'block', 'margin-left': startval});
+					} else {
+						$(this).css('display', 'none');	
+					}
+				});
+			});
+			$("#prev1s").on("click", function(){
+				if(month>0){
+					month = month -1;
+					year = year;
+				}
+				else{
+					month = 11;
+					year = year - 1;
+				}
+				commonEx();
+				$("#calendar-country").find('div').each(function(){
+					var emon = $(this).data('emon');
+					var getstartdate = $(this).data('std');
+					var startval = ($("."+getstartdate).text()-1) * 35;
+					if(emon == month){			
+						$(this).css({'display':'block', 'margin-left': startval});		
+					} else {
+						$(this).css('display', 'none');	
+					}
+				});
+			});
+			$("#calendar-country").find('div').click(function(){
+				var getid = $(this).attr('id');
+				document.location.href ='/edit/'+getid;
+			});
+	</script>
